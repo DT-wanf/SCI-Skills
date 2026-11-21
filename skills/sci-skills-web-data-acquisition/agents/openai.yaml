@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 网络数据获取专家
+  short_description: 在数据确实不足时设计合规采集、试采集、审核与回传流程
+  default_prompt: Use $sci-skills-web-data-acquisition to design a lawful no-API web-data
+    acquisition workflow.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

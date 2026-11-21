@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 论文精读专家
+  short_description: 逐篇还原研究方法、实验设计、证据链、局限与结论边界
+  default_prompt: Use $sci-skills-paper-deep-reading to deeply analyze this paper
+    and map its evidence chain.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 论文汇报专家
+  short_description: 把论文组织成证据驱动、逻辑清晰且可直接讲解的演示文稿
+  default_prompt: Use $sci-skills-paper-presentation to turn this paper into a clear
+    evidence-led presentation.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

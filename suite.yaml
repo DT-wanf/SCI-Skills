@@ -1,0 +1,38 @@
+product: SCI-Skills
+display_name: SCI-Skills
+release_version: 3.0.2
+architecture: one-orchestrator-plus-independent-experts
+orchestrator: sci-skills
+paper_families: [empirical, interpretive, method-application, theoretical, review]
+stage_count: 35
+expert_count: 13
+zero_external_api: true
+mandatory_configuration: false
+manual_operation_companion: required
+stage_authority: sci-skills
+runtime_layout:
+  root: skills
+  discovery_depth: 1
+  skill_root_requires: SKILL.md
+expert_groups:
+  evidence-and-sources:
+    - sci-skills-literature-search
+    - sci-skills-paper-deep-reading
+    - sci-skills-web-data-acquisition
+    - sci-skills-data-availability
+  analysis-and-figures:
+    - sci-skills-statistical-reporting
+    - sci-skills-scientific-figures
+  writing-and-expression:
+    - sci-skills-manuscript-writing
+    - sci-skills-academic-polishing
+    - sci-skills-aigc-authorial-rewriting
+    - sci-skills-paper-presentation
+  review-and-publication:
+    - sci-skills-presubmission-review
+    - sci-skills-reviewer-response
+    - sci-skills-journal-recommendation
+compatibility:
+  contract_version: "1.0"
+  compatible_suite: ">=3.0.1 <4.0.0"
+

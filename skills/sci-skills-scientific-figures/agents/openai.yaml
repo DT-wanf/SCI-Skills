@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 科研绘图专家
+  short_description: 规划并验证真实数据图、算法结构图、流程图和论文示意图
+  default_prompt: Use $sci-skills-scientific-figures to plan or create a traceable
+    manuscript figure from my materials.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

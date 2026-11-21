@@ -1,0 +1,11 @@
+contract_version: "1.0"
+expert_skill: sci-skills-journal-recommendation
+artifact_type: journal-recommendation
+required_sections:
+  - scope_and_inputs
+  - specialist_findings
+  - evidence_and_execution_status
+  - deliverables
+  - limitations_and_risks
+  - quality_checks
+  - one_next_action

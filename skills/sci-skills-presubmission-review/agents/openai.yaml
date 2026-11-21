@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 投稿前审查专家
+  short_description: 从创新性、方法、证据、表达和合规角度进行投稿前完整审查
+  default_prompt: Use $sci-skills-presubmission-review to run a rigorous pre-submission
+    review of my manuscript.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

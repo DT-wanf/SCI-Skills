@@ -1,0 +1,20 @@
+product: SCI-Skills
+suite_version: 3.0.2
+component_name: sci-skills-literature-search
+component_type: expert
+component_version: 3.0.1
+contract_version: "1.0"
+core_snapshot_version: "1.0"
+core_snapshot_sha256: 94ac639d6a19f7654bf4eea1c6b1ac6faa431aea03e2f6512388db7e087aefc8
+compatible_orchestrator: ">=3.0.1 <4.0.0"
+capabilities:
+  - literature-search
+manual_routes:
+  - website-or-database
+  - software-or-local-runtime
+  - repository-or-submission-system
+optional_adapters:
+  - local-file-import
+  - manual-database-export
+zero_external_api: true
+stage_authority: sci-skills

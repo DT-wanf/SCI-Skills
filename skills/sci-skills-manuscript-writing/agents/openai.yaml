@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 论文写作专家
+  short_description: 依据真实研究证据规划、撰写、重构并检查论文各个章节
+  default_prompt: Use $sci-skills-manuscript-writing to draft this manuscript section
+    from my verified evidence.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

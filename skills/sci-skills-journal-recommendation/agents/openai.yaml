@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 论文质量与期刊推荐专家
+  short_description: 先评估当前论文质量，再分层推荐匹配且可核验的投稿期刊
+  default_prompt: Use $sci-skills-journal-recommendation to assess my manuscript quality
+    and recommend suitable journals.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

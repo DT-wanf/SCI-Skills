@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 学术润色专家
+  short_description: 不改变科学含义与证据强度地润色、翻译和统一学术表达
+  default_prompt: Use $sci-skills-academic-polishing to polish this academic text
+    without changing its scientific meaning.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

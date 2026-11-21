@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 审稿回复专家
+  short_description: 逐条拆解审稿意见、规划修改证据并生成可核验回复材料
+  default_prompt: Use $sci-skills-reviewer-response to prepare an evidence-based point-by-point
+    reviewer response.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

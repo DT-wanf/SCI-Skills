@@ -1,0 +1,207 @@
+name: sci-skills
+display_name: SCI-Skills
+version: 3.0.2
+contract_version: "1.0"
+core_snapshot_version: "1.0"
+description: Zero-API orchestration for five paper families, 35 stages, and 13 independent expert skills.
+
+always_load:
+  - references/core/operating-principles.md
+  - references/core/beginner-guidance.md
+  - references/core/action-routing.md
+  - references/core/data-sufficiency-gate.md
+  - references/core/zero-api-policy.md
+  - references/evidence-integrity.md
+
+entry_routes:
+  beginner_start: User has only a direction, topic, or uncertainty and needs guided intake.
+  project_continue: User says continue, provides a state card, or refers to an existing project.
+  direct_task: User asks for one bounded expert task.
+  artifact_review: User uploads a draft, data description, result, figure, review letter, or stage deliverable.
+
+paper_families:
+  E: empirical
+  I: interpretive
+  M: method-application
+  T: theoretical
+  R: review
+
+core_stage_count: 35
+stage_authority: sci-skills
+
+expert_skills:
+  literature-search: sci-skills-literature-search
+  paper-deep-reading: sci-skills-paper-deep-reading
+  manuscript-writing: sci-skills-manuscript-writing
+  academic-polishing: sci-skills-academic-polishing
+  scientific-figures: sci-skills-scientific-figures
+  statistical-reporting: sci-skills-statistical-reporting
+  paper-presentation: sci-skills-paper-presentation
+  presubmission-review: sci-skills-presubmission-review
+  reviewer-response: sci-skills-reviewer-response
+  data-availability: sci-skills-data-availability
+  web-data-acquisition: sci-skills-web-data-acquisition
+  aigc-authorial-rewriting: sci-skills-aigc-authorial-rewriting
+  journal-recommendation: sci-skills-journal-recommendation
+
+expert_contract:
+  version: "1.0"
+  required_fields:
+    - expert_skill
+    - project_id
+    - paper_family
+    - stage_id
+    - task_id
+    - task_status
+    - inputs_reviewed
+    - outputs
+    - evidence_status
+    - assumptions
+    - author_input_needed
+    - manual_actions
+    - quality_checks
+    - conflicts
+    - conflict_resolution_status
+    - merge_permission
+    - recommended_next_action
+    - stage_acceptance_recommendation
+  stage_acceptance_owner: sci-skills
+
+zero_api_policy:
+  third_party_api_calls: forbidden
+  api_keys_or_tokens: forbidden
+  remote_model_services: forbidden
+  allowed_mainline:
+    - platform-native browsing
+    - official webpages opened through platform tools
+    - user-provided files
+    - local computation
+    - user-completed manual exports
+  optional_local_adapters:
+    - local-python
+    - local-r
+    - local-file-import
+    - manual-database-export
+    - local-model-already-available
+    - local-document-rendering
+    - imported-pdf-ris-bibtex-nbib-csv-xlsx-json-pptx-docx
+
+stage_expert_candidates:
+  E1: [literature-search]
+  E2: [literature-search, paper-deep-reading]
+  E3: [paper-deep-reading, scientific-figures]
+  E4: [web-data-acquisition, statistical-reporting, data-availability]
+  E5: [web-data-acquisition, statistical-reporting, scientific-figures, data-availability]
+  E6: [manuscript-writing, academic-polishing, scientific-figures, aigc-authorial-rewriting]
+  E7: [academic-polishing, presubmission-review, reviewer-response, data-availability, paper-presentation, aigc-authorial-rewriting, journal-recommendation]
+  I1: [literature-search]
+  I2: [web-data-acquisition, literature-search, paper-deep-reading]
+  I3: [paper-deep-reading]
+  I4: [paper-deep-reading]
+  I5: [manuscript-writing]
+  I6: [manuscript-writing, academic-polishing, aigc-authorial-rewriting]
+  I7: [academic-polishing, presubmission-review, reviewer-response, paper-presentation, aigc-authorial-rewriting, journal-recommendation]
+  M1: [literature-search]
+  M2: [literature-search, paper-deep-reading]
+  M3: [scientific-figures, manuscript-writing]
+  M4: [scientific-figures, data-availability]
+  M5: [statistical-reporting, scientific-figures]
+  M6: [manuscript-writing, academic-polishing, aigc-authorial-rewriting]
+  M7: [academic-polishing, presubmission-review, reviewer-response, data-availability, paper-presentation, aigc-authorial-rewriting, journal-recommendation]
+  T1: [literature-search]
+  T2: [literature-search, paper-deep-reading]
+  T3: [paper-deep-reading, manuscript-writing]
+  T4: [manuscript-writing, scientific-figures]
+  T5: [manuscript-writing, academic-polishing]
+  T6: [manuscript-writing, academic-polishing, aigc-authorial-rewriting]
+  T7: [academic-polishing, presubmission-review, reviewer-response, data-availability, paper-presentation, aigc-authorial-rewriting, journal-recommendation]
+  R1: [literature-search]
+  R2: [literature-search]
+  R3: [literature-search, paper-deep-reading]
+  R4: [paper-deep-reading, scientific-figures]
+  R5: [paper-deep-reading, manuscript-writing]
+  R6: [manuscript-writing, academic-polishing, scientific-figures, aigc-authorial-rewriting]
+  R7: [literature-search, academic-polishing, presubmission-review, reviewer-response, data-availability, paper-presentation, aigc-authorial-rewriting, journal-recommendation]
+
+expert_activation_conditions:
+  web-data-acquisition:
+    require_all:
+      - data_sufficiency in [ABSENT, INSUFFICIENT]
+      - web_evidence_methodologically_appropriate is true
+    block_if:
+      - data_sufficiency in [UNKNOWN, SUFFICIENT]
+      - critical_gap_repairable_by_cleaning_derivation_or_existing_linkage is true
+  journal-recommendation:
+    require_all:
+      - current_manuscript_quality_assessed is true
+      - manuscript_scope_and_article_type_known is true
+  aigc-authorial-rewriting:
+    block_if:
+      - request_is_only_to_evade_a_detector is true
+
+figure_activation_conditions:
+  result_rendering:
+    require_all:
+      - real_data_or_verified_result_files_available is true
+      - variable_metric_and_transformation_definitions_available is true
+      - plotting_backend in [python, r]
+      - plotting_source_available is true
+      - actual_execution_evidence_available is true
+      - rendered_values_trace_to_inputs is true
+      - source_risk_gate_passed is true
+    block_if_any:
+      - only_textual_conclusion_is_available is true
+      - simulated_or_invented_values_used_as_results is true
+      - image_generation_model_used_for_result_pixels is true
+      - execution_is_unverified is true
+      - simulated_random_mock_or_example_values_detected_in_production_source is true
+      - untraceable_manual_result_arrays_detected is true
+      - unsupported_significance_marks_detected is true
+  explanatory_or_enhancement_rendering:
+    require_all:
+      - manuscript_location_and_purpose_proposed is true
+      - content_and_decomposition_plan_disclosed is true
+      - user_rendering_approval is true
+  final_insertion:
+    require_all:
+      - rendered_figure_qa_passed is true
+      - user_final_approval is true
+
+action_defaults:
+  prompt_first: [E1, E3, E4, E6, I1, I3, I5, I6, M1, M3, M6, T1, T3, T4, T5, T6, R1, R4, R5, R6]
+  conditional_external: [E2, E5, E7, I2, I4, I7, M2, M4, M5, M7, T2, T7, R2, R3, R7]
+
+external_playbooks:
+  literature-database-export: references/action-playbooks/literature-database-export.md
+  empirical-data-and-experiment: references/action-playbooks/empirical-data-and-experiment.md
+  text-and-archive-collection: references/action-playbooks/text-and-archive-collection.md
+  prototype-and-validation: references/action-playbooks/prototype-and-validation.md
+  submission-platform: references/action-playbooks/submission-platform.md
+  web-data-collection: references/action-playbooks/web-data-collection.md
+
+stage_external_playbooks:
+  E2: literature-database-export
+  E5: empirical-data-and-experiment
+  E7: submission-platform
+  I2: text-and-archive-collection
+  I4: text-and-archive-collection
+  I7: submission-platform
+  M2: literature-database-export
+  M4: prototype-and-validation
+  M5: prototype-and-validation
+  M7: submission-platform
+  T2: literature-database-export
+  T7: submission-platform
+  R2: literature-database-export
+  R3: literature-database-export
+  R7: submission-platform
+
+loading_limits:
+  current_stage_modules: 1
+  primary_experts: 2
+  external_playbooks: 1
+
+component_registry: schemas/component-registry.yaml
+expert_task_schema: schemas/expert-task.yaml
+expert_result_schema: schemas/expert-result.yaml
+adapter_contract: references/adapters/local-adapters.md

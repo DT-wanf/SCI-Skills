@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills
+  short_description: 五类论文、35阶段与13位专家协同的零配置论文全流程助手
+  default_prompt: Use $sci-skills to diagnose my current paper stage and guide me
+    through the next verified step.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas

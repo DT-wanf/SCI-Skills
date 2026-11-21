@@ -1,0 +1,19 @@
+contract_version: "1.0"
+project_id: null
+paper_family: null
+stage_id: null
+operation_task_id: null
+platform_or_software: null
+operation_date: null
+completed_steps: []
+queries_filters_or_parameters: []
+generated_identifiers: []
+returned_files: []
+logs_or_screenshots: []
+record_count_or_output_summary: null
+access_license_or_export_limits: []
+problems_encountered: []
+unresolved_items: []
+user_confirmation: null
+credentials_or_secrets_included: false
+

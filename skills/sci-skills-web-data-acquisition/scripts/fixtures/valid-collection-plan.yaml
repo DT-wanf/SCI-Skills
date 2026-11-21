@@ -1,0 +1,32 @@
+plan_version: 1.1
+activation_gate:
+  data_sufficiency: INSUFFICIENT
+  critical_gap: Missing official historical records for the defined outcome
+  cleaning_or_derivation_can_repair: false
+  web_evidence_methodologically_appropriate: true
+  acquisition_activated: true
+crawl_gate:
+  crawl_necessity: BLOCKED
+  official_download_checked: true
+research_link:
+  research_question: Test question
+  unit_of_analysis: one official record
+scope:
+  sampling_rule: all eligible records in the defined period
+selected_source:
+  name: Official repository download
+  official_url: https://example.invalid/official-record
+  access_route: ordinary webpage download
+  research_use_rights: public research download; verify licence before reuse
+  export_limits: none stated; verify on access date
+output:
+  content_fields:
+    - record_id
+    - outcome
+  provenance_fields:
+    - source_name
+    - collected_at
+pilot:
+  target_size: 20
+  status: planned
+

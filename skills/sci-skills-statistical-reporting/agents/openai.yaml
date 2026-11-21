@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 统计分析专家
+  short_description: 审查统计设计、执行证据、模型假设并规范报告研究结果
+  default_prompt: Use $sci-skills-statistical-reporting to audit and report the statistics
+    for my study.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

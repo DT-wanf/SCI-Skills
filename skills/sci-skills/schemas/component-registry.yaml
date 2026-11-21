@@ -1,0 +1,35 @@
+product: SCI-Skills
+suite_version: 3.0.2
+contract_version: "1.0"
+core_snapshot_version: "1.0"
+stage_authority: sci-skills
+components:
+  - name: sci-skills
+    type: orchestrator
+  - name: sci-skills-literature-search
+    type: expert
+  - name: sci-skills-paper-deep-reading
+    type: expert
+  - name: sci-skills-manuscript-writing
+    type: expert
+  - name: sci-skills-academic-polishing
+    type: expert
+  - name: sci-skills-scientific-figures
+    type: expert
+  - name: sci-skills-statistical-reporting
+    type: expert
+  - name: sci-skills-paper-presentation
+    type: expert
+  - name: sci-skills-presubmission-review
+    type: expert
+  - name: sci-skills-reviewer-response
+    type: expert
+  - name: sci-skills-data-availability
+    type: expert
+  - name: sci-skills-web-data-acquisition
+    type: expert
+  - name: sci-skills-aigc-authorial-rewriting
+    type: expert
+  - name: sci-skills-journal-recommendation
+    type: expert
+

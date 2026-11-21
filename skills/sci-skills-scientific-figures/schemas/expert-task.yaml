@@ -1,0 +1,16 @@
+contract_version: "1.0"
+project_id: null
+paper_family: null
+stage_id: null
+task_id: null
+expert_skill: null
+task_summary: null
+inputs: []
+expected_outputs: []
+evidence_boundaries: []
+acceptance_checks: []
+known_missing_items: []
+manual_operation_allowed: true
+optional_adapters_allowed: []
+stage_authority: sci-skills
+

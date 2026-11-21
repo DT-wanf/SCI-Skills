@@ -1,0 +1,13 @@
+contract_version: "1.0"
+project_id: null
+paper_family: null
+stage_id: null
+operation_task_id: null
+platform_or_software: null
+objective: null
+available_files: []
+completion_evidence: []
+safety_constraints: []
+return_materials: []
+project_paused: true
+

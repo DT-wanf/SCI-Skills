@@ -1,0 +1,26 @@
+product: SCI-Skills
+suite_version: 3.0.2
+component_name: sci-skills
+component_type: orchestrator
+component_version: 3.0.2
+contract_version: 1.0
+core_snapshot_version: 1.0
+compatible_orchestrator: ">=3.0.1 <4.0.0"
+capabilities:
+  - five-paper-family-routing
+  - thirty-five-stage-control
+  - expert-dispatch-and-return-validation
+  - manual-operation-companion
+  - local-adapter-degradation
+manual_routes:
+  - website-or-database
+  - software-or-local-runtime
+  - repository-or-submission-system
+optional_adapters:
+  - local-python
+  - local-r
+  - local-file-import
+  - manual-database-export
+  - local-document-rendering
+  - local-model-already-available
+zero_external_api: true

@@ -1,0 +1,18 @@
+contract_version: "1.0"
+conflict_id: null
+project_id: null
+paper_family: null
+stage_id: null
+task_ids: []
+expert_skills: []
+conflict_type: EVIDENCE | EXECUTION | INTERPRETATION | TERMINOLOGY | SCOPE | RECOMMENDATION
+claim_or_decision: null
+positions:
+  - expert_skill: null
+    value_or_interpretation: null
+    evidence_label: null
+    source_or_locator: null
+resolution_status: UNRESOLVED
+orchestrator_decision: null
+decision_basis: []
+author_input_needed: []

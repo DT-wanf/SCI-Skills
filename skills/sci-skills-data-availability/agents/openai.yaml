@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · 数据可用性专家
+  short_description: 规划数据代码共享、仓库文件、持久标识符和可用性声明
+  default_prompt: Use $sci-skills-data-availability to prepare a verifiable data and
+    code availability plan.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

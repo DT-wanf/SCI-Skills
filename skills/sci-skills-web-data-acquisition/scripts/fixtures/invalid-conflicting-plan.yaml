@@ -1,0 +1,22 @@
+activation_gate:
+  data_sufficiency: INSUFFICIENT
+  critical_gap: Missing official records
+  cleaning_or_derivation_can_repair: true
+  web_evidence_methodologically_appropriate: false
+  acquisition_activated: false
+research_link:
+  unit_of_analysis: one record
+scope:
+  sampling_rule: all eligible records
+selected_source:
+  name: Official download
+  access_route: ordinary webpage download
+  research_use_rights: verify licence
+output:
+  content_fields:
+    - record_id
+  provenance_fields:
+    - collected_at
+pilot:
+  target_size: 20
+

@@ -1,0 +1,14 @@
+interface:
+  display_name: SCI-Skills · AIGC风险与作者化改写专家
+  short_description: 识别机器化表达风险并基于作者真实判断进行可追溯改写
+  default_prompt: Use $sci-skills-aigc-authorial-rewriting to audit AIGC-style risks
+    and rewrite this text in an authentic authorial voice.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
